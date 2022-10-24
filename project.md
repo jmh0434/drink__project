@@ -3,6 +3,10 @@
 ## 페이지
 - USER(사용자)
     - Main(GET : /index)
+        - 술 이름으로 검색(GET /drink ? title = "")
+        - 술 상세페이지 (GET /drink/:id)
+        - 술 정렬 (GET /drink ? )
+        
     - Login(GET : /local/index)
     - Register(GET : /new/index)
     - myPage(GET : /my-pages/index)
