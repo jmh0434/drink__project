@@ -1,0 +1,24 @@
+.container{
+    position : relative;
+    left : 50%;
+    top : 50%;
+    width : 90vw;
+    height : 95vh;
+    transform : translate(-50%, -50%);
+    border : 3px solid white;
+
+    display : grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "nav footer";
+    grid-gap : 1vh;
+    background-color: rgb(22, 22, 22);
+
+    color : white;
+}
+.container > *{
+    border : 2px solid white;
+}

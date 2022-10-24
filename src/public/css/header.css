@@ -1,0 +1,82 @@
+.header{
+    grid-area : header;
+
+    display : grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr;
+    grid-gap : 0 1vh;
+
+}
+.header > *{
+    border : 2px solid white;
+}
+.header__logo{
+}
+.header__logo > .header__title{
+    width : 100%;
+    height : 100%;
+}
+.header__title > .title__img{
+    width : 100%;
+    height : 100%;
+
+}
+/* header nav */
+
+.header__nav{
+    display : flex;
+}
+.header__nav > *{
+    border : 1px solid white;
+}
+
+/* HEADER NAV => searchbar부분 */
+.header__nav > .header__search{
+    width: 30%;
+    max-width : 30%;
+}
+.header__search > .header__form{
+    width : 100%;
+    height : 100%;
+    /* background-color: darkcyan; */
+    position : relative;
+    /* 써치 박스 => absolute로! */
+}
+.header__form > .search__box{
+    position : absolute;
+    top : 50%;
+    left : 20%;
+    transform : translateY(-50%);
+    height : 30px;
+    /* border : 3px solid white; */
+    display : flex;
+    border-radius : 10px;
+    overflow: hidden;
+
+}
+.search__box > *{
+    /* 태두리 제거 */
+    border : none;
+    outline : none;
+}
+.search__box > #search__title{
+    color : black;
+    font-size : 0.8rem;
+    text-align: center;
+}
+.search__box>#search__button{
+    cursor: pointer;
+    font-size : 0.8rem;
+}
+.search__box > #search__button:hover{
+    transition: all 0.5s;
+    background-color: black;
+    color : white;
+}
+
+
+/* header__nav */
+.header__nav > .header__menu{
+    width : 70%;
+    max-width : 70%;
+}
