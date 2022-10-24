@@ -10,10 +10,15 @@
 .main > *{
     border : 2px solid black;
 }
+
+/* main header영역! */
 .main > .main__header{
     grid-area: header;
+    display : flex;
 }
 
+
+/* main section부분! => item*/
 .main > .main__section{
     grid-area: section;
     display : grid;
