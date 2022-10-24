@@ -1,0 +1,27 @@
+.main{
+    /* 확실히 높이가 가변적이어서 scroll이 안 생겼음!*/
+    display : grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 7fr;
+    grid-template-areas: 
+    "header header"
+    "section section";
+}
+.main > *{
+    border : 2px solid black;
+}
+.main > .main__header{
+    grid-area: header;
+}
+
+.main > .main__section{
+    grid-area: section;
+    display : grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    overflow-y: scroll;
+    grid-gap : 1vh 1vh;
+}
+.main__section > .item{
+    border : 1px solid black;
+}
