@@ -1,3 +1,50 @@
 .nav {
     grid-area: nav;
 }
+
+.nav__list{
+    width : 100%;
+    height : 50%;
+    /* border : 2px solid white; */
+    display : flex;
+    flex-direction: column;
+}
+.nav__list > .nav__icon{
+    flex-grow : 1;
+    /* border : 2px solid white; */
+    position : relative;
+}
+.nav__icon > a{
+    color : white;
+    display : block;
+    width : 45%;
+    height : 45%;
+    position : absolute;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%, -50%);
+    border : 2px solid white;
+
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    border-radius : 25px;
+
+    display : flex;
+    flex-direction: column;
+}
+.nav__icon > a:hover{
+    transition : all 0.5s;
+    background-color: white;
+    color : black;
+}
+
+.nav__icon > a > span{
+    /* border : 1px solid white; */
+    flex-grow : 1;
+    text-align: center;
+    display : block;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
