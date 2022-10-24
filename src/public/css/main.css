@@ -8,6 +8,28 @@
     grid-gap : 1vh;
     padding : 1vh;
 }
+
+/* 아이템 상자 내부 꾸밈 */
 .main > .item{
     border : 2px solid white;
+    display : flex;
+    flex-direction: column;
+}
+.item > *{
+    border : 2px solid white;
+}
+/* 아이템 이미지박스 */
+.item > .item__imgbox{
+    flex-grow : 1;
+}
+/* 아이템 컨텐츠 박스 */
+.item > .item__contents{
+    flex-grow: 1;
+    display : grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap : 1vh;
+}
+.item__contents > *{
+    border : 1px solid white;
 }

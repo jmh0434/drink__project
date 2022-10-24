@@ -71,21 +71,29 @@
                         <span>shop</span>
                     </a>
                 </li>
+                <li class="nav__icon">
+                    <a href="/drink-shop/index">
+                        <span><i class="fa-solid fa-bottle-droplet"></i></span>
+                        <span>guide</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <main class="main">
-            <div class="item item1">item1</div>
-            <div class="item item2">item2</div>
-            <div class="item item3">item3</div>
-            <div class="item item4">item4</div>
-            <div class="item item5">item5</div>
-            <div class="item item6">item6</div>
-            <div class="item item7">item7</div>
-            <div class="item item8">item8</div>
-            <div class="item item9">item9</div>
-            <div class="item item10">item10</div>
-            <div class="item item11">item11</div>
-            <div class="item item12">item12</div>
+            <% for(let i = 0; i < 12; i++){ %>
+                <div class="item">
+                    <div class="item__imgbox"></div>
+                    <div class="item__contents">
+                        <div class="content item__title"></div>
+                        <div class="content item__price"></div>
+                        <div class="content item__type"></div>
+                        <div class="content item__alchol"></div>
+                        <div class="content item__sweet"></div>
+                        <div class="content item__sour"></div>
+                    </div>
+                </div>
+            <% } %>
+            
         </main>
         <footer class="footer">footer</footer>
     </div>
