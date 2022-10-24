@@ -12,4 +12,5 @@ app.use(express.static( './src/public' ));
 app.get('/index', async(req,res) => {
     res.render('index.ejs');
 })
+// clone성공?
 app.listen(3000, async() => console.log(`3000 server is open!`))
