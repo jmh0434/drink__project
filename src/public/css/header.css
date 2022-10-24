@@ -8,7 +8,7 @@
 
 }
 .header > *{
-    border : 2px solid white;
+    /* border : 2px solid white; */
 }
 .header__logo{
 }
@@ -27,7 +27,7 @@
     display : flex;
 }
 .header__nav > *{
-    border : 1px solid white;
+    /* border : 1px solid white; */
 }
 
 /* HEADER NAV => searchbar부분 */
@@ -79,4 +79,44 @@
 .header__nav > .header__menu{
     width : 70%;
     max-width : 70%;
+    position : relative;
+}
+.header__menu a{
+    display : flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-decoration: none;
+    color : white;
+    padding : 8px 12px;
+    height : 50%;
+    border : 2px solid white;
+    border-top-left-radius : 5px;
+    border-top-right-radius : 5px;
+    border-bottom: none;
+    font-size : 0.8rem;
+    font-weight : 800;
+    margin : 0 0.5vw;
+}
+.header__menu a:hover{
+    transition : all 0.5s;
+    background-color: white;
+    color : black;
+}
+.header__menu > .header__list{
+    position : absolute;
+    top : 0;
+    right : 0;
+    height : 100%;
+    width : 50%;
+    display : flex;
+    justify-content: center;
+    align-content: flex-end;
+    /* border : 7px solid white; */
+}
+.header__menu > .header__list > .list{
+    /* border : 3px solid white; */
+    height : 50%;
+    position : relative;
+    top : 50%;
+    transform: translateY(-50%);
 }
