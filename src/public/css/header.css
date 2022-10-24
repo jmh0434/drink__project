@@ -4,7 +4,7 @@
 .header > .header__carousel{
     width : 100%;
     height : 100%;
-    background-color: whitesmoke;
+    background-color: rgb(252, 247, 247);
     overflow-x: hidden;
 }
 .header__carousel > .carousel__entire__box{
