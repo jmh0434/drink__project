@@ -1,24 +1,17 @@
 .container{
+    font-family: 'Ubuntu', sans-serif;
     position : relative;
     left : 50%;
-    top : 50%;
-    width : 90vw;
-    height : 95vh;
-    transform : translate(-50%, -50%);
-    border : 3px solid white;
+    transform : translateX(-50%);
+
+    width : 85vw;
+    height : 150vh;
+    border : 2px solid black;
 
     display : grid;
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 1fr 6fr 1fr;
-    grid-template-areas: 
-    "header header"
-    "nav main"
-    "nav footer";
-    grid-gap : 1vh;
-    background-color: rgb(65, 65, 65);
-    font-family: 'Ubuntu', sans-serif;
-    color : white;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 7fr;
 }
 .container > *{
-    border : 2px solid white;
+    border : 2px solid black;
 }

@@ -11,91 +11,62 @@
     <!-- font-awsome -->
     <script src="https://kit.fontawesome.com/388ade87ec.js" crossorigin="anonymous"></script>
 
-    <!-- css -->
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/container.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/footer.css">
+   <!-- css file -->
+   <link rel="stylesheet" href="../css/reset.css">
+   <link rel="stylesheet" href="../css/container.css">
+   <link rel="stylesheet" href="../css/header.css">
+   <link rel="stylesheet" href="../css/nav.css">
+   <link rel="stylesheet" href="../css/main.css">
 
+   <!-- javascript -->
+   <script defer src="../javascript/carousel.js"></script>
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <div class="header__logo">
-                <a href="/index" class="header__title">
-                    <img src="../img/logo.png" alt="" class="title__img">
-                </a>
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="/index" class="logo__title">Stupping</a>
             </div>
-            <div class="header__nav">
-                <div class="header__search">
-                    <form action="/drink" method="get" class="header__form">
-                        <div class="search__box">
-                            <!-- 술 이름으로 검색! -->
-                            <input type="search" name="title" id="search__title"
-                            placeholder="input drink title">
-                            <input type="submit" value="GO" id="search__button">
-                        </div>
-                    </form>
+            <div class="nav__search">
+                <form action="/drink" method="get">
+                    <div class="search__box">
+                        <input type="search" placeholder="술 이름" name="title" id="title">
+                        <input type="submit" value="ok">
+                    </div>
+                </form>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="list">
+                        <a href="/home">home</a>
+                    </li>
+                    <li class="list">
+                        <a href="">sign-up</a>
+                    </li>
+                    <li class="list">
+                        <a href="">login</a>
+                    </li>
+                    <li class="list">
+                        <a href="">register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <header class="header">
+            <div class="header__carousel">
+                <div class="carousel__entire__box">
+                    <div class="carousel__item">1</div>
+                    <div class="carousel__item">2</div>
+                    <div class="carousel__item">3</div>
                 </div>
-                <div class="header__menu">
-                    <ul class="header__list">
-                        <li class="list">
-                            <a href="/index">HOME</a>
-                        </li>
-                        <li class="list">
-                            <a href="/local/index">LOGIN</a>
-                        </li>
-                        <li class="list">
-                            <a href="/new/index">SIGN-UP</a>
-                        </li>
-                        <li class="list">
-                            <a href="/my-pages/index">MYPAGE</a>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="carousel__shift__box">
+                <div class="shift"></div>
+                <div class="shift"></div>
+                <div class="shift"></div>
             </div>
         </header>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__icon">
-                    <a href="/drink-type/index">
-                        <span><i class="fa-solid fa-pen"></i></span>
-                        <span>type</span>
-                    </a>
-                </li>
-                <li class="nav__icon">
-                    <a href="/drink-shop/index">
-                        <span><i class="fa-solid fa-shop"></i></span>
-                        <span>shop</span>
-                    </a>
-                </li>
-                <li class="nav__icon">
-                    <a href="/drink-shop/index">
-                        <span><i class="fa-solid fa-bottle-droplet"></i></span>
-                        <span>guide</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <main class="main">
-            <% for(let i = 0; i < 12; i++){ %>
-                <div class="item">
-                    <div class="item__imgbox"></div>
-                    <div class="item__contents">
-                        <div class="content item__title"></div>
-                        <div class="content item__price"></div>
-                        <div class="content item__type"></div>
-                        <div class="content item__alchol"></div>
-                        <div class="content item__sweet"></div>
-                        <div class="content item__sour"></div>
-                    </div>
-                </div>
-            <% } %>
-            
-        </main>
-        <footer class="footer">footer</footer>
+        <main class="main">main</main>
     </div>
 </body>
 </html>
