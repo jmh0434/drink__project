@@ -23,9 +23,9 @@ module.exports = () => {
             })
             console.log(resultArr);
             // 이제 찾아줬으면 page! 
-            // let resultRender = await res.status(200).render('drinkResult.ejs',{
-            //     drink : findDrinkByTitle,
-            // });
+            let resultRender = await res.status(200).render('drinkResult.ejs',{
+                drink : resultArr,
+            });
 
     
         }catch(err){

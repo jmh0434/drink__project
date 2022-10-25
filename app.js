@@ -4,6 +4,7 @@ const session = require('./src/auth/session.js');
 const db = require('./src/database.js');
 const indexPageRouter = require('./src/routes/indexPageRouter.js');
 const drinkRouter = require('./src/routes/drinkRouter.js');
+const questionRouter = require('./src/routes/admin/question.js');
 const app = express();
 
 app.set('views', './src/views');
@@ -18,4 +19,5 @@ session(app);
 // router middleware
 app.use('/', indexPageRouter());
 app.use('/drink', drinkRouter());
+app.use('/admin', questionRouter());
 module.exports = app;
