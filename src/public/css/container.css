@@ -5,7 +5,7 @@
     transform : translateX(-50%);
     width : 85vw;
     height : 150vh;
-    border : 2px solid black;
+    /* border : 2px solid black; */
 
     display : grid;
     grid-template-columns: 1fr;

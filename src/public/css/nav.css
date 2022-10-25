@@ -1,6 +1,8 @@
 .nav{
     background-color: rgb(246, 242, 242);
     display : flex;
+    position : relative;
+    /* header반응형 때 생기는 로고들을 absolute로 배치할거라서...! */
 }
 
 /* nav__logo */
@@ -48,6 +50,59 @@ form > .search__box{
     outline : none;
 }
 /* nav__menu */
+
+/* ======= slide__menu ====== */
+.left__slide__menu__box{
+    display: none;
+    width: 50px;
+    height: 50px;
+    /* border : 2px solid black; */
+    position: relative;
+    /* 안 보이게 했다가.... */
+
+}
+.right__slide__menu__box{
+    display : none; 
+    width : 50px;
+    height : 50px;
+    /* border : 2px solid black; */
+    position : relative;
+    /* 안 보이게 했다가.... */
+}
+.user__open__button{
+    position : absolute;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    /* border : 2px solid black; */
+    width: 20%;
+    height: 50%;
+    top : 50%;
+    left : 0;
+    transform: translate(50%, -50%);
+}
+.menu__open__button{
+    position : absolute;
+    width : 20%;
+    height : 50%;
+    right : 0%;
+    top : 50%;
+    transform: translate(-50%, -50%);
+    /* border : 2px solid black; */
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.open__button > i{
+    font-size : 1.2rem;
+    cursor : pointer;
+}
+.open__button > i:hover{
+    transition : all 0.5s;
+    color : gray;
+    transform : scale(1.2);
+}
 .nav__menu{
     flex-grow : 6;
     position : relative;
@@ -85,5 +140,32 @@ form > .search__box{
 @media screen and (min-width : 768px) and (max-width : 1023px) {
     .nav__search{
         display : none;
+    }
+}
+
+/* tablet PC 새로길이 */
+@media screen and (max-width : 767px){
+    /* 원래 nav안에는 요소 3개인데 그 중 2개를 지우고, 
+    2개를 또 생기게 한 후 새롭게 display : flex; */
+    .nav__search {
+        display: none;
+    }
+    .nav__menu {
+        display : none;
+    }
+    .nav{ 
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav > *{
+        flex-grow : 1;
+        /* border : 2px solid black; */
+    }
+    .right__slide__menu__box{
+        display : block;
+    }
+    .left__slide__menu__box{
+        display : block;
     }
 }
