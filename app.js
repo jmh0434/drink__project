@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('./src/auth/session.js');
 const db = require('./src/database.js');
 const indexPageRouter = require('./src/routes/indexPageRouter.js');
+const drinkRouter = require('./src/routes/drinkRouter.js');
 const app = express();
 
 app.set('views', './src/views');
@@ -16,4 +17,5 @@ app.use(express.static( './src/public' ));
 session(app);
 // router middleware
 app.use('/', indexPageRouter());
+app.use('/drink', drinkRouter());
 module.exports = app;

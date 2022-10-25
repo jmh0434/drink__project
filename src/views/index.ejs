@@ -85,7 +85,7 @@
                             <img src="../img/logo.png" alt="">
                         </div>
                         <div class="item__contents">
-                            <% for(let j = 0; j < 6; j++){ %>
+                            <% for(let j = 0; j < keyArr.length; j++){ %>
                                 <div class="contents">
                                     <span class="content contents__property"><%= keyArr[j] %></span>
                                     <span class="content contents__value"><%= drink[i][keyArr[j]] %></span>

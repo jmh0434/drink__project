@@ -35,6 +35,7 @@
     display : flex;
     flex-direction: column;
     /* padding : 1vh; */
+    cursor: pointer;
 }
 .item > *{
     border : 1px solid black;
@@ -82,6 +83,9 @@
     text-overflow: ellipsis; 
     white-space: nowrap;
     font-style: italic;
+    font-weight: 500;
+    font-size : 0.8rem;
+    color : gray;
 }
 
 

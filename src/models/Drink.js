@@ -21,7 +21,11 @@ const drinkSchema = new mongoose.Schema(
             type : String,
             required : true,
         },
-        alchol : { // 도수
+        alcohol : { // 도수
+            type : Number,
+            required : true,
+        },
+        volume : {
             type : Number,
             required : true,
         },

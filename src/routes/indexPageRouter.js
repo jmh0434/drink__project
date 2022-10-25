@@ -8,7 +8,9 @@ module.exports = () => {
     // 메인페이지 GET /index
     router.get('/index', async(req,res) => {
         try{
-            let key = await Drink.findOne().select('-_id -id -food -img -body -cool');
+            let key = await Drink.findOne().select('-_id -id -food -img -body -cool -meterial -company -flavour_type -sour');
+            // console.log(key);
+            let img = await Drink.find().where('img').limit(12);
             let drink = await Drink.find().limit(12);
             let keyArr = Object.keys(key.toJSON());
             
