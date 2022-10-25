@@ -1,16 +1,19 @@
 'use strict';
 const express = require('express');
+const session = require('./src/auth/session.js');
+const db = require('./src/database.js');
+const indexPageRouter = require('./src/routes/indexPageRouter.js');
 const app = express();
 
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
-
+db(); //db함수 호출로 연결!
 app.use(express.urlencoded({ extended : true }));
 app.use(express.json());
 app.use(express.static( './src/public' ));
 
-app.get('/index', async(req,res) => {
-    res.render('index.ejs');
-})
-// clone성공?
-app.listen(3000, async() => console.log(`3000 server is open!`))
+// session과 passport를 먼저 활성화를 해줘야돼!! 
+session(app);
+// router middleware
+app.use('/', indexPageRouter());
+module.exports = app;
