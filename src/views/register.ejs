@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">회원가입</h1>
+    <form action="/api/auth/new" method="post">
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </p>
+        <p>
+            <label for="password">PW</label>
+            <input type="password" name="password" id="password">
+        </p>
+        <p>
+            <label for="userName">이름</label>
+            <input type="text" name="userName" id="userName">
+        </p>
+        <input type="submit" value="회원가입">
+        <!-- answer이랑 result는 결과 나온 후에 push해주자! -->
+    </form>
+</body>
+</html>

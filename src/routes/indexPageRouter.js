@@ -23,5 +23,14 @@ module.exports = () => {
             return console.log(err);
         }
     })
+
+    // 회원가입 페이지 GET /new/index
+    router.get('/new/index', async(req,res) => {
+        try{
+            let newPage = await res.status(200).render('register.ejs');
+        }catch(err){
+            return console.log(err);
+        }
+    })
     return router;
 }
