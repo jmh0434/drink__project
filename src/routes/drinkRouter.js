@@ -6,6 +6,12 @@ const Drink = require('../models/Drink.js');
 // 술 검색 
 // 1. query문 ? /drink ? title = ""
 // 2. params /drink/:id
+
+function isLogined(value){
+    let logined = value === true ? value = "logout" : value = "login";
+    return logined;
+}
+
 module.exports = () => {
 
     // 1. query검색
@@ -24,6 +30,7 @@ module.exports = () => {
             console.log(resultArr);
             // 이제 찾아줬으면 page! 
             let resultRender = await res.status(200).render('drinkResult.ejs',{
+                isLogined : isLogined(req.user),
                 drink : resultArr,
             });
 

@@ -3,20 +3,19 @@ const express = require('express');
 const router = express.Router();
 const Drink = require('../models/Drink.js'); //db에서 불러와주기!! 
 
+// isLogined라는 변수에 값을 넣어서 client로 전달하기!
+// 로그인 유무를 파악하는 함수...!!
+function isLogined(value){
+    let logined = value === true ? value = "logout" : value = "login";
+    return logined;
+}
 module.exports = () => {
-
-    // 메인페이지 GET /index
+    // 0 
+    // 1. 메인페이지 GET /index
     router.get('/index', async(req,res) => {
         try{
-            let isLogined;
-            console.log(`req.user >> ${req.user}`);
-            if(req.user){
-                isLogined = "logout";
-            }else{
-                isLogined = "login";
-            }
-            console.log(isLogined);
-
+            
+            // req.user !=
             let key = await Drink.findOne().select('-_id -id -food -img -body -cool -meterial -company -flavour_type -sour');
             // console.log(key);
             let img = await Drink.find().where('img').limit(12);
@@ -25,7 +24,7 @@ module.exports = () => {
             
             let mainPage = await res.status(200)
             .render('index.ejs', {
-                isLogined : isLogined,
+                isLogined : isLogined(req.user),
                 drink : drink,
                 keyArr : keyArr,
             });
@@ -34,31 +33,91 @@ module.exports = () => {
         }
     })
 
-    // 회원가입 페이지 GET /new/index
+    // 2. 회원가입 페이지 GET /new/index
     router.get('/new/index', async(req,res) => {
         try{
-            let newPage = await res.status(200).render('register.ejs');
+            let newPage = await res.status(200).render('register.ejs',
+            {
+                isLogined : isLogined(req.user),
+            });
         }catch(err){
             return console.log(err);
         }
     })
 
-    // 로그인 페이지 GET /local/index
+    // 3. 로그인 페이지 GET /local/index
     router.get('/local/index', async(req,res) => {
         try{
+            console.log(req.user);
+            console.log(`함수 >> ${isLogined(req.user)}`);
             console.log('로그인 페이지 호출!');
-            const loginPage = await res.status(200).render('login.ejs');
+            const loginPage = await res.status(200).render('login.ejs', 
+            {
+                isLogined : isLogined(req.user),
+            });
         }catch(err){
             return console.log(err);
         }
     })
 
-    // 로그아웃 페이지 /logout
+    // 4. 로그아웃 GET /logout
     router.get('/logout', async(req,res) => {
         console.log('로그아웃 호출!');
         req.session.destroy(() => {
             return res.redirect('/index');
         })
+    })
+
+    // 5. 술 취향 GET /drink-test/index
+    router.get('/drink-test/index', async(req,res) => {
+        
+        try{
+            let auth = req.user;
+            console.log(auth);
+            let testPage = auth === undefined ? await res.status(200).render('login.ejs', {isLogined : isLogined(req.user),}) : await res.status(200).render('test.ejs', {
+                isLogined : isLogined(req.user),
+            })
+
+            return testPage;
+        }catch(err){
+            return console.log(err);
+        }
+    })
+
+    // 6. 전통주점 GET /drink-shop/index
+    router.get('/drink-shop/index', async(req,res) => {
+        try{
+            let shop = await res.status(200).render('drinkShop.ejs',
+            {
+                isLogined : isLogined(req.user),
+            });
+        }catch(err){
+            return console.log(err);
+        }
+    })
+
+    // 7. 전통주 홍보 GET /drink-ex/index
+    router.get('/drink-ex/index', async(req,res) => {
+        try{
+            let explain = await res.status(200).render('advantage.ejs',
+            {
+                isLogined : isLogined(req.user),
+            });
+        }catch(err){
+            return console.log(err);
+        }
+    })
+
+    // 8. 마이페이지 GET /my-pages/index
+    router.get('/my-pages/index', async(req,res) => {
+        try{
+            let myPage = await res.status(200).render('mypage.ejs',
+            {
+                isLogined : isLogined(req.user),
+            });
+        }catch(err){
+            return console.log(err);
+        }
     })
     return router;
 }

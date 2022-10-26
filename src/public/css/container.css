@@ -1,0 +1,22 @@
+html,body{
+    width : 100vw;
+    height : 100vh;
+    position : relative;
+}
+.container{
+    font-family: 'Ubuntu', sans-serif;
+    position : relative;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%, -50%);
+    width : 85vw;
+    height : 90vh;
+    border : 2px solid black;
+    
+    display : grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8.5fr;
+}
+.container > *{
+    border : 1px solid black;
+}
