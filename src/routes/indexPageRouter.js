@@ -48,7 +48,7 @@ module.exports = () => {
     // 3. 로그인 페이지 GET /local/index
     router.get('/local/index', async(req,res) => {
         try{
-            console.log(req.user);
+            console.log(`req.user >> ${req.user}`);
             console.log(`함수 >> ${isLogined(req.user)}`);
             console.log('로그인 페이지 호출!');
             const loginPage = await res.status(200).render('login.ejs', 
