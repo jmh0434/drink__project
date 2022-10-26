@@ -13,13 +13,14 @@
 
    <!-- css file -->
    <link rel="stylesheet" href="../css/reset.css">
-   <link rel="stylesheet" href="../css/container.css">
-   <link rel="stylesheet" href="../css/header.css">
-   <link rel="stylesheet" href="../css/nav.css">
-   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/indexPage/container.css">
+   <link rel="stylesheet" href="../css/indexPage/header.css">
+   <link rel="stylesheet" href="../css/indexPage/nav.css">
+   <link rel="stylesheet" href="../css/indexPage/main.css">
 
    <!-- javascript -->
    <script defer src="../javascript/carousel.js"></script>
+   <script defer src="../javascript/isLogined.js"></script>
 </head>
 <body>
     <div class="container">
@@ -49,7 +50,9 @@
                         <a href="/new/index">signup</a>
                     </li>
                     <li class="list">
-                        <a href="/local/index">login</a>
+                        <a class="login" href="">
+                            <%= isLogined %>
+                        </a>
                     </li>
                     <li class="list">
                         <a href="/my-pages/index">mypage</a>
