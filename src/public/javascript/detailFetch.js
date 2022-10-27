@@ -1,5 +1,6 @@
 'use strict';
-alert('detailFetch');
+// detail로 가는 fetch함수 구현완료! 
+
 const idArr = [];
 const drinkBox = document.querySelectorAll('.drink__result__box');
 
