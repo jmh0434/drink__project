@@ -10,7 +10,7 @@ const drinkSchema = new mongoose.Schema(
         price : {
             type : Number,
             required : true,
-            min : 5000,
+            min : 1000,
             max : 1000000,
         },
         img : {

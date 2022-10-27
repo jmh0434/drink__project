@@ -27,10 +27,16 @@ module.exports = () => {
                 // 전체 문자중에 filter로 값 거르기!!!!! ===> javascript의 중요성
                 // 값을 서버에서 전부 다 함수를 사용해서 조립해주는.. 역할
             })
-            console.log(resultArr);
+            // 속성값만 찾아오기...!!
+            let property = await Drink.findOne().select('title price volume -_id');
+            let pro = Object.keys(property.toJSON());
+            console.log(pro);
+            console.log('속성!!!!!');
+            console.log(property);
             // 이제 찾아줬으면 page! 
             let resultRender = await res.status(200).render('drinkResult.ejs',{
                 isLogined : isLogined(req.user),
+                property : pro,
                 drink : resultArr,
             });
 

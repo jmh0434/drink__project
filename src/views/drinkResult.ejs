@@ -18,6 +18,7 @@
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
     <script defer src="../javascript/isLogined.js"></script>
+    <!-- <script defer src="../javascript/property.js"></script> -->
 </head>
 <body>
     <div class="container">
@@ -74,24 +75,17 @@
 
             </aside>
             <article class="section__article">
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
-                <div class="drink__result__box">1</div>
+                <% for(let i = 0; i < drink.length; i++){ %>
+                    <div class="drink__result__box">
+                        <div class="result__img result">1</div>
+                        <% for(let j = 0; j <property.length; j++){ %>
+                            <div class="result__property result">
+                                <span class="pro"><%= property[j] %></span>
+                                <span class="value"><%= drink[i][property[j]]%></span>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
             </article>
         </main>
     </div>
