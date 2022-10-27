@@ -13,7 +13,6 @@ function isLogined(value){
 }
 
 module.exports = () => {
-
     // 1. query검색
     router.get('/', async(req,res) => {
         try{

@@ -22,3 +22,26 @@ async function detailFetch(id){
         return console.log(err);
     }
 }
+
+// item
+let itemArr = [];
+const item = document.querySelectorAll('.item');
+
+item.forEach((value, index) => {
+    itemArr.push(value.getAttribute('data-id'));
+
+    value.addEventListener('click', () => {
+        itemFetch(itemArr[index]);
+    })
+})
+
+async function itemFetch(id){
+    try{
+        let itemID = await fetch(`/drink/${id}`);
+        console.log(itemID);
+        let redirect = window.location.href = `/drink/${id}`;
+        return redirect;
+    }catch(err){
+        return console.log(err);
+    }
+}

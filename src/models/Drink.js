@@ -53,7 +53,9 @@ const drinkSchema = new mongoose.Schema(
             type : String,
             // required : false로 해줌. => 입력받을 때 받는게 아니라 food에서 가져오는거라서!
             required : false,
-        }
+        },
+        meterial : String,
+        company : String,
     },
     {
         timestamps : true,

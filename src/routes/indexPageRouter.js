@@ -21,7 +21,8 @@ module.exports = () => {
             let img = await Drink.find().where('img').limit(12);
             let drink = await Drink.find().limit(12);
             let keyArr = Object.keys(key.toJSON());
-            
+            console.log(drink);
+            console.log(keyArr);
             let mainPage = await res.status(200)
             .render('index.ejs', {
                 isLogined : isLogined(req.user),
