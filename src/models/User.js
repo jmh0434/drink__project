@@ -18,6 +18,13 @@ const userSchema = new mongoose.Schema(
             type : String,
             required : true,
         },
+        nickName : {
+          type : String,
+          unique : true,
+          required : true,
+          minlength : 1,
+          maxlength : 15,
+        },
         answer : { // 유져가 조사끝나면 
             type : [String],
         },
