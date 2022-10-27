@@ -42,7 +42,9 @@
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
     "img title title"
-    "img price ml"
+    "img price ml";
+
+    cursor : pointer;
 }
 .drink__result__box > *{
     /* border : 1px solid black; */

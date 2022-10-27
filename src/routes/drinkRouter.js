@@ -30,9 +30,7 @@ module.exports = () => {
             // 속성값만 찾아오기...!!
             let property = await Drink.findOne().select('title price volume -_id');
             let pro = Object.keys(property.toJSON());
-            console.log(pro);
-            console.log('속성!!!!!');
-            console.log(property);
+            console.log(resultArr);
             // 이제 찾아줬으면 page! 
             let resultRender = await res.status(200).render('drinkResult.ejs',{
                 isLogined : isLogined(req.user),
@@ -41,6 +39,21 @@ module.exports = () => {
             });
 
     
+        }catch(err){
+            return console.log(err);
+        }
+    })
+
+    // 2. detail Page GET /drink/:id
+    router.get('/:id', async(req,res) => {
+        try{
+            let { id } = req.params;
+            console.log(id);
+            let findDrink = await Drink.findOne({_id : id});
+            console.log(findDrink);
+            let detailPage = await res.status(200).render('drinkDetail.ejs',{
+                drink : findDrink,
+            });
         }catch(err){
             return console.log(err);
         }

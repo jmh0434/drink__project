@@ -1,0 +1,73 @@
+.section{
+    display : flex;
+}
+.section > *{
+    border : 1px solid black;
+}
+.image__detail{
+    width : 50%;
+}
+.contents__detail{
+    width : 50%;
+    position : relative;
+}
+
+/* contents 꾸미기! */
+.contents__container{
+    position : relative;
+    width : 80%;
+    height : 80%;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%, -50%);
+    border : 2px solid black;
+    display : grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "title title title title"
+    "type type alcohol volume"
+    "price price flavour flavour"
+    "sweet sour body cool"
+    "food food food food"
+    "meterial meterial meterial meterial";
+}
+.contents__container > *{
+    border : 2px solid black;
+}
+.title{
+    grid-area: title;
+}
+.type {
+    grid-area: type;
+}
+.volume {
+    grid-area: volume;
+}
+.price{
+    grid-area: price;
+}
+.alcohol{
+    grid-area: alcohol;
+}
+.sweet{
+    grid-area : sweet;
+}
+.sour{
+    grid-area : sour;
+}
+.body{
+    grid-area: body;
+}
+.cool{
+    grid-area: cool;
+}
+.flavour{
+    grid-area: flavour;
+}
+.meterial{
+    grid-area: meterial;
+}
+.food{
+    grid-area: food;
+}
