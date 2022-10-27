@@ -8,7 +8,7 @@
     "section section";
 }
 .main > *{
-    border : 2px solid black;
+    /* border : 2px solid black; */
 }
 
 /* main header영역! */
@@ -25,20 +25,23 @@
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(300px, auto);
     overflow-y: scroll;
-    grid-gap : 1vh 1vh;
+    grid-gap : 3vh 2vh;
     padding : 1vh 4vw;
 }
 
 /* item상자 내부 꾸미기! */
 .main__section > .item{ 
-    border : 1px solid black;
+    /* border : 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius : 10px;
     display : flex;
     flex-direction: column;
     /* padding : 1vh; */
     cursor: pointer;
+    overflow: hidden;
 }
 .item > *{
-    border : 1px solid black;
+    /* border : 1px solid black; */
     flex-grow : 1;
 }
 .item > .item__img{
@@ -70,22 +73,23 @@
     align-items: center;
     font-family: 'Ubuntu', sans-serif;
     overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .contents > .contents__property{
     font-family: 'Ubuntu', sans-serif;
     font-weight: 800;
 }
 .contents > .contents__value{
-    font-family: 'Ubuntu', sans-serif;
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap;
     font-style: italic;
     font-weight: 500;
     font-size : 0.8rem;
-    color : gray;
+    color : rgb(76, 76, 76);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800;
 }
 
 
