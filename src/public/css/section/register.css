@@ -112,6 +112,9 @@
     font-style: italic;
     /* border : 3px solid black; */
 }
+.login__footer > p{
+    padding : 2vh 0;
+}
 /* input box color */
 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px rgb(246, 242, 242) inset ; -webkit-text-fill-color: #000; }
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
