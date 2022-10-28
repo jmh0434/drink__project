@@ -46,7 +46,7 @@
                     </li>
                     <li class="list">
                         <a class="login" href="">
-                            <%= isLogined %>
+                            login
                         </a>
                     </li>
                     <li class="list">
@@ -61,7 +61,24 @@
             </div>
         </nav>
         <main class="section">
-            
+            <form action="/result" method="get">
+                <% for(let i = 0; i < contents.length; i++){ %>
+                    <div class="question__box">
+                        <h2><%= i + 1 %>번 질문</h2>
+                        <p><%= contents[i].contents %></p>
+                    </div>
+                    <div class="answer__box">
+                        <select name="question" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                <% } %>
+                <input type="submit" value="제출">
+            </form>
         </main>
     </div>
 </body>

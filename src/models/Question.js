@@ -11,9 +11,6 @@ const questionSchema = new mongoose.Schema(
         contents : { // 질문내용
             type : String,
             required : true,
-        },
-        result : {
-            type : String,
         }
         // 대답은 userDB에 answer객체로....담아주자! 
     },

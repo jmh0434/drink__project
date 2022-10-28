@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const Drink = require('../models/Drink.js'); //db에서 불러와주기!! 
+const Question = require('../models/Question.js');
 
 // isLogined라는 변수에 값을 넣어서 client로 전달하기!
 // 로그인 유무를 파악하는 함수...!!
@@ -73,12 +74,13 @@ module.exports = () => {
     router.get('/drink-test/index', async(req,res) => {
         
         try{
-            let auth = req.user;
-            console.log(auth);
-            let testPage = auth === undefined ? await res.status(200).render('login.ejs', {isLogined : isLogined(req.user),}) : await res.status(200).render('test.ejs', {
-                isLogined : isLogined(req.user),
+            
+            let questions = await Question.find({});
+            console.log('질문 >> ');
+            console.log(questions);
+            let testPage = await res.render('test.ejs', {
+                contents : questions,
             })
-
             return testPage;
         }catch(err){
             return console.log(err);
@@ -116,6 +118,32 @@ module.exports = () => {
             {
                 isLogined : isLogined(req.user),
             });
+        }catch(err){
+            return console.log(err);
+        }
+    })
+
+    // test값 넘기기
+    router.get('/result', async(req,res) => {
+        try{
+            const { question } = req.query;
+            
+            let numberResult = question.map((value) => +value);
+            // spread연산자! => 단 신 바 청 하나씩!! 
+            let [sweet, sour, body, cool] = numberResult;
+            console.log(`단 >> ${sweet}`); 
+            console.log(`신 >> ${sour}`); 
+            console.log(`바 >> ${body}`); 
+            console.log(`청 >> ${cool}`); 
+            let drink = await Drink.find({
+                $and : [
+                    {sweet : sweet},
+                    {sour : sour},
+                    {body : body},
+                    {cool : cool},
+                ]
+            });
+            console.log(drink);
         }catch(err){
             return console.log(err);
         }
