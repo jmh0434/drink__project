@@ -8,6 +8,7 @@ const indexPageRouter = require('./src/routes/indexPageRouter.js');
 const authRouter = require('./src/routes/authRouter.js'); // 인증관련 라우터
 const drinkRouter = require('./src/routes/drinkRouter.js');
 const questionRouter = require('./src/routes/admin/question.js');
+const shopRouter =require('./src/routes/shopRouter');
 
 const app = express();
 
@@ -30,4 +31,5 @@ app.use('/', indexPageRouter());
 app.use('/drink', drinkRouter());
 app.use('/admin', questionRouter());
 app.use('/api/auth', authRouter(passport(app)));
+app.use('/shop', shopRouter());
 module.exports = app;
