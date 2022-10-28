@@ -13,7 +13,6 @@ function isLogined(value){
 }
 
 module.exports = () => {
-
     // 1. query검색
     router.get('/', async(req,res) => {
         try{
@@ -27,14 +26,33 @@ module.exports = () => {
                 // 전체 문자중에 filter로 값 거르기!!!!! ===> javascript의 중요성
                 // 값을 서버에서 전부 다 함수를 사용해서 조립해주는.. 역할
             })
+            // 속성값만 찾아오기...!!
+            let property = await Drink.findOne().select('title price volume -_id');
+            let pro = Object.keys(property.toJSON());
             console.log(resultArr);
             // 이제 찾아줬으면 page! 
             let resultRender = await res.status(200).render('drinkResult.ejs',{
                 isLogined : isLogined(req.user),
+                property : pro,
                 drink : resultArr,
             });
 
     
+        }catch(err){
+            return console.log(err);
+        }
+    })
+
+    // 2. detail Page GET /drink/:id
+    router.get('/:id', async(req,res) => {
+        try{
+            let { id } = req.params;
+            console.log(id);
+            let findDrink = await Drink.findOne({_id : id});
+            console.log(findDrink);
+            let detailPage = await res.status(200).render('drinkDetail.ejs',{
+                drink : findDrink,
+            });
         }catch(err){
             return console.log(err);
         }

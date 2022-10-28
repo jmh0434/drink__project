@@ -7,11 +7,12 @@ module.exports = (passport) => {
     // 1. 회원가입 : POST /api/auth/new
     router.post('/new', async(req,res) => {
         try{
-            const { email, password, userName } = req.body;
+            const { email, password, userName, nickName } = req.body;
             let user = new User({ // mongoose가 javascript객체로 document를 접근할 수 있게 해줌.
                 email : email,
                 password : password,
                 userName : userName,
+                nickName : nickName,
             })
             let saveUser = await user.save(); //db에 저장! ==> 저장하기전에.. bcrypt사용해야해!
             console.log(saveUser);

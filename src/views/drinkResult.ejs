@@ -14,8 +14,11 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/container.css">
     <link rel="stylesheet" href="../css/indexPage/nav.css">
+    <link rel="stylesheet" href="../css/section/resultSection.css">
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
+    <script defer src="../javascript/isLogined.js"></script>
+    <script defer src="../javascript/detailFetch.js"></script>
 </head>
 <body>
     <div class="container">
@@ -61,10 +64,37 @@
             </div>
         </nav>
         <main class="section">
-            <% for(let i = 0; i<drink.length; i++){ %>
+            <!-- <% for(let i = 0; i<drink.length; i++){ %>
                 title >> <%= drink[i].title %>
         
-            <% } %>
+            <% } %> -->
+            <header class="section__header">
+                <div class="title">
+                    <h2 class="title">Result</h2>
+                </div>
+                <div class="sortBox">
+                    <div class="sort sortByPrice">
+                        sort
+                    </div>
+
+                </div>
+            </header>
+            <aside class="section__aside">
+
+            </aside>
+            <article class="section__article">
+                <% for(let i = 0; i < drink.length; i++){ %>
+                    <div class="drink__result__box" data-id="<%= drink[i]._id %>">
+                        <div class="result__img result">1</div>
+                        <% for(let j = 0; j <property.length; j++){ %>
+                            <div class="result__property result">
+                                <span class="pro"><%= property[j] %></span>
+                                <span class="value"><%= drink[i][property[j]]%></span>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            </article>
         </main>
     </div>
 </body>

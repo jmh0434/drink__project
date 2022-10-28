@@ -16,8 +16,8 @@ html,body{
     
     display : grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 8.5fr;
-
+    grid-template-rows: 10% 90%;
+    /* calc했더니 특정 범위 이상 scroll이 안 됐음.. 마지막 요소가 끝까지 안 나옴. */
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius : 25px;
     overflow: hidden;

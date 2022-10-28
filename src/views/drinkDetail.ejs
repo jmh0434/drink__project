@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/container.css">
     <link rel="stylesheet" href="../css/indexPage/nav.css">
+    <link rel="stylesheet" href="../css/section/detailSection.css">
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
 </head>
@@ -46,7 +47,7 @@
                     </li>
                     <li class="list">
                         <a class="login" href="">
-                            <%= isLogined %>
+                            login
                         </a>
                     </li>
                     <li class="list">
@@ -61,7 +62,26 @@
             </div>
         </nav>
         <main class="section">
-            
+            <div class="image__detail"></div>
+            <div class="contents__detail">
+                
+                
+                <div class="contents__container">
+                    <div class="title content"><%= drink.title%></div>
+                    <div class="type content"><%= drink.type%></div>
+                    <div class="volume content"><%= drink.volume%>ml</div>
+                    <div class="price content"><%= drink.price%>won</div>
+                    <div class="alcohol content"><%= drink.alcohol%>도</div>
+                    <div class="sweet content"><%= drink.sweet%></div>
+                    <div class="sour content"><%= drink.sour%></div>
+                    <div class="body content"><%= drink.body%></div>
+                    <div class="cool content"><%= drink.cool%></div>
+                    <div class="flavour content"><%= drink.company %></div>
+                    <div class="meterial content"><%= drink.meterial %></div>
+                    <div class="food content"><%= drink.food %></div>
+                </div>
+            </div>
+                
         </main>
     </div>
 </body>

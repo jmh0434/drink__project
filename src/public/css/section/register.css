@@ -13,7 +13,7 @@
 }
 .login__box > #login__form{
     width : 80%;
-    height : 70%;
+    height : 80%;
     position : relative;
     left : 50%;
     top : 50%;
@@ -48,22 +48,23 @@
     height : 50%;
     position : absolute;
     left : 50%;
-    top : 40%;
+    top : 10%;
     transform: translate(-50%, -50%);
 
     display : flex;
     flex-direction: column;
+    /* border : 3px solid black; */
 }
 .login__main__container > .input__box{
     flex-grow : 1;
     padding : 10px 5px;
 }
 /* 글자 */
-.input__box > .email,.password,.userName{
-    font-size : 1.2rem;
+.input__box > .email,.password,.userName,.nickName{
+    font-size : 1rem;
 }
 /* 실제 inputbox */
-.input__box #email, #password, #userName{
+.input__box #email, #password, #userName, #nickName{
     border : none;
     outline : none;
     font-size : 1rem;
@@ -102,13 +103,17 @@
     padding : 4px 6px;
 }
 .login__footer{
-    flex-grow : 2;
+    flex-grow : 1.5;
 
     display : flex;
     justify-content: center;
     align-items: center;
     font-size : 0.8rem;
     font-style: italic;
+    /* border : 3px solid black; */
+}
+.login__footer > p{
+    padding : 2vh 0;
 }
 /* input box color */
 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px rgb(246, 242, 242) inset ; -webkit-text-fill-color: #000; }
