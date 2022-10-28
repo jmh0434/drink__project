@@ -14,8 +14,24 @@
 .section__header{
     grid-area : header;
     border : 2px solid black;
+    display : flex;
 }
-
+.section__header > *{
+    border : 1px solid black;
+}
+.section__header > .title{
+    flex-grow : 2;
+}
+.section__header > .sortBox{
+    flex-grow : 1;
+}
+.sortBox > .sortByPrice{
+    width : fit-content;
+    height : fit-content;
+    padding : 5px 7px;
+    border : 2px solid black;
+    cursor : pointer;
+}
 /* result section 사이드바 */
 .section__aside{
     grid-area : aside;
