@@ -1,4 +1,5 @@
 'use strict';
+// 리펙토링
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User.js');
@@ -16,6 +17,7 @@ module.exports = (passport) => {
             })
             let saveUser = await user.save(); //db에 저장! ==> 저장하기전에.. bcrypt사용해야해!
             console.log(saveUser);
+            return res.redirect('/index');
         }catch(err){
             return console.log(err);
         }
