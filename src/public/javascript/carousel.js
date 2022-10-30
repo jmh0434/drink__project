@@ -6,7 +6,7 @@ shift.forEach((value,index) => {
     value.addEventListener('mouseover', () => {
         // alert(index);
         carouselBox.style.cssText = 
-        `transform : translateX(${-33.3333333 * index}%);
+        `transform : translateX(${-33.33333333333 * index}%);
         transition : all 0.5s;
         `;
     })

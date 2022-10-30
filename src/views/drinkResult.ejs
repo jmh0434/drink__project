@@ -19,6 +19,7 @@
 
     <script defer src="../javascript/isLogined.js"></script>
     <script defer src="../javascript/detailFetch.js"></script>
+    <script defer src="../javascript/foodSort.js"></script>
 </head>
 <body>
     <div class="container">
@@ -70,12 +71,28 @@
             <% } %> -->
             <header class="section__header">
                 <div class="title">
-                    <h2 class="title">Result</h2>
+                    <h2>Result</h2>
                 </div>
                 <div class="sortBox">
-                    <div class="sort sortByPrice">
-                        sort
-                    </div>
+                    <ul class="sort sortByFood">
+                        <!-- fetch => query로 보내기! -->
+                        <li class="food fish">
+                            <span>🐟</span>
+                        </li>
+                        <li class="food meat">
+                            <!-- <i class="fa-regular fa-meat"></i> -->
+                            <span>🍖</span>
+                        </li>
+                        <li class="food jungoal">
+                            <span>🍲</span>
+                        </li>
+                        <li class="food cheese">
+                            <span>🧀</span>
+                        </li>
+                        <li class="food salad">
+                            <span>🥗</span>
+                        </li>
+                    </ul>
 
                 </div>
             </header>

@@ -15,33 +15,58 @@ function isLogined(value){
 module.exports = () => {
     // 1. query검색
     router.get('/', async(req,res) => {
+        console.log(`api호출!!!`);
         try{
-            // query문은 그냥 /drink에 ?로 따라오는거라 ?부분은 req.query에 담아주면돼!
             let { title } = req.query;
-            // 실제 값 
-            let findAll = await Drink.find(); // 전체 다 출력!
-            // console.log(findAll); // [{}, {}, {}, {}]
-            let resultArr = findAll.filter((ele) => {
-                return ele.title.includes(title) === true;
-                // 전체 문자중에 filter로 값 거르기!!!!! ===> javascript의 중요성
-                // 값을 서버에서 전부 다 함수를 사용해서 조립해주는.. 역할
-            })
-            // 속성값만 찾아오기...!!
-            let property = await Drink.findOne().select('title price volume -_id');
-            let pro = Object.keys(property.toJSON());
-            console.log(resultArr);
-            // 이제 찾아줬으면 page! 
-            let resultRender = await res.status(200).render('drinkResult.ejs',{
-                isLogined : isLogined(req.user),
-                property : pro,
-                drink : resultArr,
-            });
-
-    
+            if(title !== undefined){
+                console.log(`이거 출력! >> ${title}`);
+                // query문은 그냥 /drink에 ?로 따라오는거라 ?부분은 req.query에 담아주면돼!
+                // 실제 값 
+                let findAll = await Drink.find(); // 전체 다 출력!
+                // console.log(findAll); // [{}, {}, {}, {}]
+                let resultArr = findAll.filter((ele) => {
+                    return ele.title.includes(title) === true;
+                    // 전체 문자중에 filter로 값 거르기!!!!! ===> javascript의 중요성
+                    // 값을 서버에서 전부 다 함수를 사용해서 조립해주는.. 역할
+                })
+                // 속성값만 찾아오기...!!
+                let property = await Drink.findOne().select('title price volume -_id');
+                let pro = Object.keys(property.toJSON());
+                console.log(resultArr);
+                // 이제 찾아줬으면 page! 
+                let resultRender = await res.status(200).render('drinkResult.ejs',{
+                    isLogined : isLogined(req.user),
+                    property : pro,
+                    drink : resultArr,
+                });
+            }else{
+                console.log('음식으로 출력!');
+                let { food } = req.query;
+                console.log(`food >> ${food}`);
+                let findAll = await Drink.find(); // 전체 다 출력!
+                // console.log(findAll); // [{}, {}, {}, {}]
+                let resultArr = findAll.filter((ele) => {
+                    return ele.food.includes(food) === true;
+                    // 전체 문자중에 filter로 값 거르기!!!!! ===> javascript의 중요성
+                    // 값을 서버에서 전부 다 함수를 사용해서 조립해주는.. 역할
+                })
+                // 속성값만 찾아오기...!!
+                let property = await Drink.findOne().select('title price volume -_id');
+                let pro = Object.keys(property.toJSON());
+                console.log(resultArr);
+                // 이제 찾아줬으면 page! 
+                let resultRender = await res.status(200).render('drinkResult.ejs',{
+                    isLogined : isLogined(req.user),
+                    property : pro,
+                    drink : resultArr,
+                });
+            }
         }catch(err){
             return console.log(err);
         }
     })
+
+    
 
     // 2. detail Page GET /drink/:id
     router.get('/:id', async(req,res) => {
