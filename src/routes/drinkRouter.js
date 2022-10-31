@@ -45,7 +45,7 @@ module.exports = () => {
             }else{
                 const food = new RegExp(req.query.food);
                 console.log(`fetch전달 값 >> ${food}`);
-                let findByFood = await Drink.find({food : food}).select('-_id').lean();
+                let findByFood = await Drink.find({food : food}).select().lean();
                 console.log(findByFood);
                 // let foodArr = [];
                 // for(let key in findByFood){
