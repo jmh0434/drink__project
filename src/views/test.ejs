@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/container.css">
     <link rel="stylesheet" href="../css/indexPage/nav.css">
+    <link rel="stylesheet" href="../css/section/testSection.css">
     <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
 
+    <script src=""></script>
 </head>
 <body>
     <div class="container">
@@ -60,30 +62,68 @@
                 </div>
             </div>
         </nav>
-        <main class="section">
-            <form action="/result" method="get">
-                <% for(let i = 0; i < contents.length; i++){ %>
-                    <div class="question__box">
-                        <h2><%= i + 1 %>번 질문</h2>
-                        <p><%= contents[i].contents %></p>
-                    </div>
-                    <div class="answer__box">
-                        <select name="question" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                <% } %>
-                <input type="submit" value="제출">
-            </form>
-
-            <div class="test__result">
-                dsdsds
+        <main class="section testSection">
+            <div class="test__start">
+                <form action="/result" method="get">
+                    <% for(let i = 0; i < contents.length; i++){ %>
+                        <div class="question">
+                            <div class="question__header">
+                                <h2 class="q">
+                                    <p>Q<%=  i + 1 %></p>
+                                    <p><%= contents[i].contents %></p>
+                                </h2>
+                            </div>
+                            <div class="question__main">
+                                <div class="answer__box">
+                                    <div class="answer">
+                                        <% let ansArr = ["매우 싫다","싫다","중간","좋다","매우 좋다"] %>
+                                        <% for(let i = 0; i < 5; i++){ %>
+                                            <p>
+                                                <label for="question<%= i %>"><%= ansArr[i] %></label>
+                                            </p>
+                                            <p>
+                                                <input type="radio" name="question" id="question<%= i %>" value="<%= i + 1 %>">
+                                            </p>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question__footer">
+                                <% let button = ["button", "button", "button", "submit"]; %>
+                                <% let value = ["다음", "다음", "다음", "제출"]; %>
+                                <% let className = ["next", "next", "next", "submit"]; %>
+                                    <input type="<%= button[i] %>" value="<%= value[i] %>" class='button <%= className[i] %>'>
+                            </div>
+                        </div>
+                    <% } %>
+                    
+                </form>
             </div>
+            <div class="test__result"></div>
         </main>
     </div>
 </body>
 </html>
+
+<!-- 
+    <% for(let i=0; i < contents.length; i++){ %>
+                        <div class="question__box">
+                            <h2>
+                                <%= i + 1 %>번 질문
+                            </h2>
+                            <p>
+                                <%= contents[i].contents %>
+                            </p>
+                        </div>
+                        <div class="answer__box">
+                            <select name="question" id="">
+                                <option value="1">매우 싫다</option>
+                                <option value="2">싫어!</option>
+                                <option value="3">보통</option>
+                                <option value="4">좋다</option>
+                                <option value="5">사랑한다</option>
+                            </select>
+                        </div>
+                        <% } %>
+                            <input type="submit" value="제출">
+ -->

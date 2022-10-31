@@ -32,4 +32,10 @@ app.use('/drink', drinkRouter());
 app.use('/admin', questionRouter());
 app.use('/api/auth', authRouter(passport(app)));
 app.use('/shop', shopRouter());
+
+app.get('/items', (req,res) => {
+    console.log(`api호출!`);
+    console.log(req.query);
+    res.render('item.ejs');
+})
 module.exports = app;

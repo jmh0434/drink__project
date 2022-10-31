@@ -143,7 +143,8 @@ module.exports = () => {
                     {cool : cool},
                 ]
             });
-            console.log(drink);
+            
+            console.log(drink); // 
         }catch(err){
             return console.log(err);
         }
