@@ -40,6 +40,10 @@
     cursor: pointer;
     overflow: hidden;
 }
+.main__section > .item:hover{
+    transition : all 0.5s;
+    transform: scale(1.05);
+}
 .item > *{
     /* border : 1px solid black; */
     flex-grow : 1;
