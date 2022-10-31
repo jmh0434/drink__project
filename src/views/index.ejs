@@ -69,15 +69,18 @@
         <header class="header">
             <div class="header__carousel">
                 <div class="carousel__entire__box">
-                    <div class="carousel__item">
-                        <a href="/drink-test/index">술 취향검사</a>
-                    </div>
-                    <div class="carousel__item">
-                        <a href="/drink-shop/index">술 주점</a>
-                    </div>
-                    <div class="carousel__item">
-                        <a href="/drink-ex/index">술 설명</a>
-                    </div>
+                    <% let urlArr = ["/drink-test/index", "/drink-shop/index", "/drink-ex/index"] %>
+                    <% let textArr = ["술 취향검사", "술 주점", "술 설명"] %>
+                    <% for(let i = 0; i<3; i++){ %>
+                        <a class="carousel__item" href="<%= urlArr[i] %>">
+                            <div class="carousel__text">
+                                sddsd
+                            </div>
+                            <div class="carousel__img">
+                                <img src="../img/logo.png" alt="">
+                            </div>
+                        </a>
+                    <% } %>
                 </div>
             </div>
             <div class="carousel__shift__box">

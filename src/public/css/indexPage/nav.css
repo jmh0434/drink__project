@@ -138,9 +138,9 @@ form > .search__box{
 
 /* tablet PC 가로길이 */
 @media screen and (min-width : 768px) and (max-width : 1023px) {
-    .nav__search{
+    /* .nav__search{
         display : none;
-    }
+    } */
 }
 
 /* tablet PC 새로길이 */
