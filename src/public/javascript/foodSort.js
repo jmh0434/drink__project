@@ -9,7 +9,7 @@ food.forEach((value, index) => {
 // result 라우터에 데이터를 fish를 주면 돼!!!! => 그리고 req.query받아주면 돼!!!
 async function foodFetch(foodName){
     try{
-        let data = await fetch(`/drink?food=${foodName}`);
+        let data = await fetch(`/drink?foods=${foodName}`);
         let result = data;
         console.log(`fetch 결과 >> ${result}`);
     }catch(err){

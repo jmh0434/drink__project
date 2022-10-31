@@ -41,12 +41,12 @@ module.exports = () => {
                 });
             }else{
                 console.log('음식으로 출력!');
-                let { food } = req.query;
-                console.log(`food >> ${food}`);
+                let { foods } = req.query;
+                console.log(`foods >> ${foods}`);
                 let findAll = await Drink.find(); // 전체 다 출력!
                 // console.log(findAll); // [{}, {}, {}, {}]
                 let resultArr = findAll.filter((ele) => {
-                    return ele.food.includes(food) === true;
+                    return ele.food.includes(foods) === true;
                     // 전체 문자중에 filter로 값 거르기!!!!! ===> javascript의 중요성
                     // 값을 서버에서 전부 다 함수를 사용해서 조립해주는.. 역할
                 })
