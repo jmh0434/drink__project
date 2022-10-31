@@ -18,5 +18,5 @@ html,body{
     grid-template-rows: 1fr 5fr 90vh;
 }
 .container > *{
-    border : 2px solid black;
+    /* border : 2px solid black; */
 }
