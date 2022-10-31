@@ -25,7 +25,7 @@ module.exports = () => {
                 console.log(`이거 출력! >> ${title}`);
                 // query문은 그냥 /drink에 ?로 따라오는거라 ?부분은 req.query에 담아주면돼!
                 // 실제 값 
-                let findAll = await Drink.find().limit(3); // 전체 다 출력!
+                let findAll = await Drink.find(); // 전체 다 출력!
                 // console.log(findAll); // [{}, {}, {}, {}]
                 let resultArr = findAll.filter((ele) => {
                     return ele.title.includes(title) === true;
