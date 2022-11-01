@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font-style -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- font-awsome -->
+    <script src="https://kit.fontawesome.com/388ade87ec.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/indexPage/nav.css">
+    <link rel="stylesheet" href="../css/section/detailSection.css">
+    <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="left__slide__menu__box">
+                <div class="user__open__button open__button">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+            <div class="nav__logo">
+                <a href="/index" class="logo__title">Stupping</a>
+            </div>
+            <div class="nav__search">
+                <form action="/drink" method="get">
+                    <div class="search__box">
+                        <input type="search" placeholder="술 이름" name="title" id="title">
+                        <input type="submit" value="ok">
+                    </div>
+                </form>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="list">
+                        <a href="/index">home</a>
+                    </li>
+                    <li class="list">
+                        <a href="/new/index">signup</a>
+                    </li>
+                    <li class="list">
+                        <a class="login" href="">
+                            login
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="/my-pages/index">mypage</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right__slide__menu__box">
+                <div class="menu__open__button open__button">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="shop_menu">
+                <form action = "/menu" method = "get">
+                    <div class = "menu_choice">
+                        <select name="question">
+                            <option value = "찌개">찌개</option>
+                            <option value = "제철">제철 메뉴</option>
+                            <option value = "전">전</option>
+                            <option value = "육회">육회</option>
+                            <option value = "무침">무침</option>
+                        </select>
+                    </div>
+                    <main class="section">
+                        <% for (var i=0; i < data.length; i++) { %>
+                            <h2 class="title">주점명 :
+                                <p>
+                                    <%=data[i].name%>
+                                </p>
+                                </h2>
+                                <p class="img">주소 :
+                                <p>
+                                    <%=data[i].address%>
+                                </p>
+                                <p>
+                                    <%=data[i].menu%>
+                                </p>
+                                <%} %>
+                            </p>
+                    </main>
+                </form>
+            </div>
+        </nav>
+    </div>
+</body>

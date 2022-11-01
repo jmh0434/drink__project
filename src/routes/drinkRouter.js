@@ -35,7 +35,7 @@ module.exports = () => {
                 // 속성값만 찾아오기...!!
                 let property = await Drink.findOne().select('title price volume -_id');
                 let pro = Object.keys(property.toJSON());
-                // console.log(resultArr);
+            
                 // 이제 찾아줬으면 page! 
                 let resultRender = await res.status(200).render('drinkResult.ejs',{
                     isLogined : isLogined(req.user),
@@ -47,28 +47,6 @@ module.exports = () => {
                 console.log(`fetch전달 값 >> ${food}`);
                 let findByFood = await Drink.find({food : food}).select().lean();
                 console.log(findByFood);
-                // let foodArr = [];
-                // for(let key in findByFood){
-                //     foodArr.push(findByFood[key].food);
-                // }
-                // console.log(foodArr);
-
-
-                // console.log(newFood);
-                // console.log(filter);
-                // let findDrinkByFood = await Drink.find().select('food -_id').limit(3);
-                // let filterFood = [...findDrinkByFood];
-                // console.log(filterFood);
-                // let valueArr = [];
-                // filterFood.forEach((value) => {
-                //     if(value.food.includes(food)){
-                //         valueArr.push(value.food);
-                //     }else{
-                //         return;
-                //     }
-                // })
-                // console.log(valueArr);
-                // 즉 food에 이 값이 들어가있는 걸 출력해주면 돼!! 
 
                 let property = await Drink.findOne().select('title price volume -_id');
                 let pro = Object.keys(property.toJSON());

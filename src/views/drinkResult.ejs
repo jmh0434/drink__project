@@ -102,7 +102,9 @@
             <article class="section__article">
                 <% for(let i = 0; i < drink.length; i++){ %>
                     <div class="drink__result__box" data-id="<%= drink[i]._id %>">
-                        <div class="result__img result">1</div>
+                        <div class="result__img result">
+                            <img src = "../img/<%= drink[i].id %>.BMP" alt = "">
+                        </div>
                         <% for(let j = 0; j <property.length; j++){ %>
                             <div class="result__property result">
                                 <span class="pro"><%= property[j] %></span>

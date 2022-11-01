@@ -17,7 +17,7 @@ module.exports = () => {
         try{
             
             // req.user !=
-            let key = await Drink.findOne().select('-_id -id -food -img -body -cool -meterial -company -flavour_type -sour');
+            let key = await Drink.findOne().select('-_id -id -sweet -img -body -cool -meterial -company -flavour_type -sour');
             // console.log(key);
             let img = await Drink.find().where('img').limit(12);
             let drink = await Drink.find().limit(12);

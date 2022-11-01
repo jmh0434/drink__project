@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>조물주 위에 막걸리</title>
     <!-- font-style -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="nav__logo">
-                <a href="/index" class="logo__title">Stupping</a>
+                <a href="/index" class="logo__title"><img src = "../img/logo.png"></a>
             </div>
             <div class="nav__search">
                 <form action="/drink" method="get">
@@ -75,7 +75,7 @@
                     <% for(let i = 0; i<3; i++){ %>
                         <a class="carousel__item" href="<%= urlArr[i] %>">
                             <div class="carousel__text">
-                                sddsd
+                                
                             </div>
                             <div class="carousel__img">
                                 <div class="img__box">
@@ -98,7 +98,7 @@
                 <% for(let i=0; i<12; i++){ %>
                     <div class="item item<%= i %>" data-id="<%= drink[i]._id %>">
                         <div class="item__img">
-                            <img src="../img/logo.png" alt="">
+                            <img class="img" src="../img/<%= [i] %>.BMP" />
                         </div>
                         <div class="item__contents">
                             <% for(let j = 0; j < keyArr.length; j++){ %>
